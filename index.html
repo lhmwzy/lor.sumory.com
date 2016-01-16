@@ -1,0 +1,113 @@
+---
+layout: default
+---
+
+  <div class='row hero'>
+    <div class='container'>
+      <div class='twelve columns'>
+        <a  href='https://github.com/sumory/lor'><h1>lor</h1></a>
+        <h3>{{ site.description }}</h3>
+        <h5>Made with <span class='mega-octicon octicon-heart'></span> by <a href='https://github.com/sumory'>sumory.wu</a></h5>
+      </div>
+    </div>
+  </div>
+
+
+
+<section id='get-started' class='get-started'>
+    <div class='container'>
+      <div class='row'>
+        <div class='twelve columns'>
+          <h3>Get started with Lor Framework</h3>
+          <div id="electron-versions" class="electron-vers">
+            
+            <span class="main-ver">test pass </span>
+            <span class="dep-ver">LuaJIT 2.0.*</span>
+            <span class="dep-ver">OpenResty 1.9.*</span>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='ten columns offset-by-one'>
+            <h5>Quick start to install lor and build up a lor app</h5>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='eight columns offset-by-two'>
+            <pre><code>
+# Clone the repository
+$ git clone https://github.com/sumory/lor
+
+# Go into the repository
+$ cd lor
+
+# before install lor, you should have installed OpenResty and luajit
+# now install lor in /opt/lua/lor
+# the `lor` cli will be in /usr/local/bin/
+$ sh install.sh /opt/lua/lor #choose your path as you want
+
+# use lor to build a project scaffold
+$ cd /tmp/ && lor new lor_demo && cd /tmp/lor_demo
+$ lor start
+# then open http://localhost:8888/ in some browser
+            </code></pre>
+          </div>
+        </div>
+        
+        </div>
+    </div>
+  </section>
+
+
+  <section class='electron-does'>
+    <div class='container'>
+      <div class='row'>
+        <div class='four columns'>
+          <img src='../images/fork.png' width='99px'>
+          <h4>Open Source</h4>
+          <p><b>lor</b> is open source; maintained by sumory.</p>
+        </div>
+        <div class='four columns'>
+          <img src='../images/browser.png' width='150px'>
+          <h4>High Performance</h4>
+          <p>use Lua with OpenResty to build apps or APIs.</p>
+        </div>
+        
+        <div class='four columns'>
+          <img src='../images/os-box.png' width='150px'>
+          <h4>Cross Platform</h4>
+          <p><b>lor</b> apps run on Mac, and Linux for now.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="more-features">
+    <div class='container'>
+      <div class='row'>
+        <div class='twelve columns'>
+          <h3>Some useful features</h3>
+        </div>
+      </div>
+
+      <div class='row features'>
+        <div class='three columns offset-by-one'>
+          <span class="mega-octicon octicon-tools"></span>
+          <br/>
+          Generate scaffold code
+        </div>
+        <div class='four columns'>
+          <span class="mega-octicon octicon-bug"></span>
+          <br/>
+          Error reporting
+        </div>
+        <div class='three columns'>
+          <span class="mega-octicon octicon-device-desktop"></span>
+          <br/>
+          Simple routes rule to follow
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  

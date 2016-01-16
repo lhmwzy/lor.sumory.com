@@ -1,0 +1,33 @@
+title: lor framework
+email: sumory.wu@gmail.com
+description: 'a lua framework based on OpenResty'
+baseurl: 'http://lor.sumory.com'
+twitter_username: sumory_mn
+github_username: sumory
+highlighter: pygments
+markdown: redcarpet
+redcarpet:
+    extensions: [with_toc_data]
+gems:
+    - jekyll-redirect-from
+latest_version: v0.0.1
+current_node: 5.1.1
+current_chrome: 47.0.2526.73
+current_v8: 4.7.80.27
+available_versions:
+    - v0.0.1
+collections:
+    docs: {output: true, permalink: '/docs/:path/'}
+defaults:
+    - {scope: {type: docs}, values: {layout: docs}}
+exclude:
+    - node_modules
+    - README.md
+    - LICENSE.md
+    - CNAME
+    - Gemfile
+    - Gemfile.lock
+    - Grunfile.js
+    - package.json
+    - script
+    - spec
