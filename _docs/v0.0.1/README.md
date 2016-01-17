@@ -13,14 +13,16 @@ changes that are not compatible with your `lor` version. If that's the case,
 you can switch to a different version of the documentation at the
 [available versions](/docs/) list.
 
+
+
+## Tutorials
+
+* [Installing](tutorial/install-lor)
+* [Quick Start](tutorial/quick-start)
+
 ## FAQ
 
 There are questions that are asked quite often, check this out before creating
 an issue:
 
 * [Lor FAQ](faq/faq)
-
-## Tutorials
-
-* [Install](tutorial/install-lor)
-* [Quick Start](tutorial/quick-start)

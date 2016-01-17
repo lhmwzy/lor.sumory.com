@@ -23,14 +23,14 @@ sh install.sh /opt/lua/lor
 	- the `lor` cli has been installed in /usr/local/bin. use `which lor` to check:
 
 		```bash
-		# which lor
+		$ which lor
 		/usr/local/bin/lor
 		```
 
 	- the `lor package` has been installed in /opt/lua/lor. use `ll /opt/lua/lor` to check:
 
 		```bash
-		# ll /opt/lua/lor
+		$ ll /opt/lua/lor
 		total 48
 		drwxr-xr-x  12 root  wheel   408B  1 16 20:28 .
 		drwxr-xr-x   3 root  wheel   102B  1 16 20:28 ..

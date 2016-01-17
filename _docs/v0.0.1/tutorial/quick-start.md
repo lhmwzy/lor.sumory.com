@@ -44,8 +44,8 @@ Generally, a lor app is structured like this:
 ```text
 $ tree .
 .
-├── application # application folder, shouldn't change it's name.
-│   ├── controllers # controllers' folder, shouldn't change it's name.
+├── application # application folder, shouldn't change its name.
+│   ├── controllers # controllers' folder, shouldn't change its name.
 │   │   ├── error.lua
 │   │   └── index.lua
 │   ├── library # some common libs
@@ -58,7 +58,7 @@ $ tree .
 │   ├── nginx # some lua configuration about nginx(OpenResty)
 │   │   ├── init.lua
 │   │   └── sh_dict.lua
-│   └── views # views file folder, shouldn't change it's name.
+│   └── views # views file folder, shouldn't change its name.
 │       ├── error
 │       │   └── common_err.html
 │       └── index
