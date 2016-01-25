@@ -11,6 +11,7 @@ lor提供了session的一个[默认插件](https://github.com/sumory/lor/blob/ma
 
 - 在使用这个插件时，用户应该先了解[lua-resty-session](https://github.com/bungle/lua-resty-session)
 - lor提供的默认session使用了cookie的存储方式，但真实项目中可能需要基于redis或是memcache等集中式的session管理，这时用户应自行创建一个lor插件来使用
+- 该插件在**lua\_code_cache**设为<font color=red>on</font>时才生效，请特别注意！可以使用`LOR_ENV=prod lord start`来启用生产模式，这时**lua\_code_cache**为on，端口为80.
 
 
 使用lor提供的默认session方式如下:

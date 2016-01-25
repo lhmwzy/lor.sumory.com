@@ -67,7 +67,7 @@ $ lor start
 
 **【注意】** lor start默认在dev环境下启动项目，这意味着nginx.conf配置为`lua_code_cache off`，生产环境中这个值一定要设为"<font color=red>on</font>"。
 
-此外，也可使用以下命令来启动生产模式：
+此外，也可使用以下命令来启动生产模式，生产模式监听的端口为80，而不是8888：
 
 ```
 LOR_ENV=prod lord start

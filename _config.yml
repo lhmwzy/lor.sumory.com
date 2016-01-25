@@ -14,13 +14,17 @@ latest_version: v0.0.5
 current_node: 5.1.1
 current_chrome: 47.0.2526.73
 current_v8: 4.7.80.27
+available_api_versions:
+    - v0.0.5
 available_versions:
     - v0.0.1
     - v0.0.5
 collections:
     docs: {output: true, permalink: '/docs/:path/'}
+    apis: {output: true, permalink: '/apis/:path/'}
 defaults:
     - {scope: {type: docs}, values: {layout: docs}}
+    - {scope: {type: apis}, values: {layout: apis}}
 exclude:
     - node_modules
     - README.md
