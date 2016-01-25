@@ -20,3 +20,9 @@ permalink: /docs/v0.0.5/index.html
 * [安装](tutorial/install-lor)
 * [Hello World！](tutorial/hello)
 * [快速开始](tutorial/quick-start)
+
+
+## 其它
+
+* [如何在lor中使用cookie](other/cookie-usage)
+* [如何在lor中使用session](other/session-usage)
