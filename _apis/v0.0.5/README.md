@@ -43,7 +43,17 @@ local app = lor()
 
 
 
+
 ## app对象
+
+
+### app:conf(key, value)
+
+application配置项，目前主要用于html模板配置，提供一下三个配置项：
+
+- app:conf("view engine", "tmpl")， 配置模板引擎，当前lor只支持lua-resty-template，所以这个值暂时固定为"tmpl"
+- app:conf("view ext", "html")，模板文件后缀，用户可自由配置
+- app:conf("views", "./app/views")，模板文件所在路径
 
 
 ### app:use(path, middleware)
@@ -113,3 +123,147 @@ app:erroruse("/user", function(err, req, res, next)
     -- ...
 end)
 ```
+
+
+### app:run()
+
+启动lor项目，开始接受请求并处理。
+
+
+
+### app:get(path, fn)
+
+- 目前lor支持的HTTP方法有get、post、head、options、put、patch、delete、trace，这些方法都可以用类似于app:get(path, fn)的形式调用。
+- 参数说明
+    - path，有两种格式，
+        - 纯字符串形式，如"/user/1","/foo/bar"
+        - 含有变量的uri， 如"/user/:id"，那么"/user/123"解析后将生成一个变量req.params.id，值为123
+    - fn，对应这个uri的请求处理匿名函数，格式为function(req, res, next) end， 也可将它理解为一个通用的lor插件
+
+- 示例:
+
+```
+app:get("/index", function(req, res, next)
+    res:send("hello world!")
+end)
+```
+
+
+
+
+
+## request对象
+
+我们注意到有大量的地方出现了形如`function(req, res, next) end`的函数，这个函数其实就是lor框架的核心机制，也就是lor的常规插件。  
+其中的`req`指的就是request对象，它包装了OpenResty收到的HTTP请求参数，并附带了一些方法来完成session、cookie数据交互，路由处理等其他后续操作。
+
+req的常用属性和方法介绍如下：
+
+### req.path
+
+请求的uri，一般用作框架内部使用，如处理路由，解析参数，重定向请求等等，若用户不清楚修改该值会有什么影响，切勿随意更改此值。
+
+### req.query
+
+这是一个table，指的是url解析后的query string，比如"/find/user?id=1&name=sumory&year=2016"被解析后会生成对象req.query,它的值为：
+
+```
+{
+    id = "1",
+    name = "sumory",
+    year = "2016"
+}
+```
+
+### req.params
+
+这是一个table，指的是url解析后的path variable，比如声明了以下路由处理方法
+
+```
+app:get("/query/:id/book/:name", function(req, res, next)
+    local params = req.params
+end)
+```
+
+那么访问"/query/123/book/abc"这个uri时得到的req.params值为:
+
+```
+{
+    id = "123",
+    name = "abc"
+}
+```
+
+### req.body
+
+这是一个table，指的是form表单提交上来的数据。
+
+
+### req:isFound()
+
+用于判断uri是否被路由到，如果这个方法返回值最终为false，说明`404`了。
+
+
+
+
+
+
+## response对象
+
+reponse对象指的是`function(req, res, next) end`函数中的res，它包装了OpenResty处理HTTP响应的一些API，并附带了一些方法来完成诸如模板渲染、重定向、json返回、session/cookie处理等其他后续操作。
+
+res的常用属性和方法介绍如下：
+
+### res:render(view, data)
+
+- 渲染html页面，响应头Content-Type值为text/html; charset=UTF-8
+- 参数说明
+    - view，模板文件路径，比如app:conf("views", "./app/views")设置了模板路径为./app/views，那么想使用模板文件./app/views/user/index.html时，这个值应为"user/index"
+    - data，类型为table，值得是模板文件渲染时需要的数据
+
+### res:html(content)
+
+- 返回内容为"content"的html，响应头Content-Type值为text/html; charset=UTF-8
+- 参数说明：content应为字符串类型
+
+### res:json(data)
+
+- 返回内容为json格式，响应头Content-Type值为application/json; charset=utf-8
+- 参数说明：data格式因为lua table
+
+### res:send(text)
+
+- 返回内容为text，响应头Content-Type值为text/plain; charset=UTF-8
+- 参数说明：text应为字符串、数字或是array等类型
+
+### res:setHeader(key, value)
+
+- 设置响应头，即调用`ngx.header[key] = value`
+
+### res:setCookie(...)
+
+- 设置cookie，底层使用lua-resty-cookie库，请自行查看该库参数格式
+- 参数说明，两种使用方式:
+    - setCookie(table)
+    - setCookie(key, value)
+
+### res:redirect(url)
+
+- 重定向，即调用`ngx.redirect(url)`
+
+
+
+
+## next函数
+
+`function(req, res, next) end`函数中的形参next是lor pipeline式路由能顺利进行的关键，它有两种调用方式：
+
+- 不带参数，直接调用next()，则会将请求传给下一个调用者，继续后面的处理
+- 带参数，如next("something")，这时会跳过之后的调用，直接去寻找能匹配的"错误处理插件"
+
+
+
+
+
+
+
