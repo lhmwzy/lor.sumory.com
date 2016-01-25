@@ -56,7 +56,7 @@ __注意__: 请先阅读以上示例的代码，在对`lor`熟悉之前，请不
 
 ### 启动项目
 
-进入刚才创建的项目目录lor_demo, 然后执行`lord start`来启动项目:
+进入刚才创建的项目目录lor_demo, 然后执行`lord start`来启动项目
 
 ```bash
 $ cd lor_demo
@@ -64,3 +64,23 @@ $ lor start
 ```
 
 现在打开浏览器，访问[http://localhost:8888](http://localhost:8888)来查看你的第一个lor项目吧.
+
+**【注意】** lor start默认在dev环境下启动项目，这意味着nginx.conf配置为`lua_code_cache off`，生产环境中这个值一定要设为"<font color=red>on</font>"。
+
+此外，也可使用以下命令来启动生产模式：
+
+```
+LOR_ENV=prod lord start
+```
+
+### 停止项目
+
+```
+$ lord stop
+```
+
+### 重启项目
+
+```
+$ lord restart
+```
