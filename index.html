@@ -5,15 +5,15 @@ layout: default
   <div class='row hero'>
     <div class='container'>
       <div class='twelve columns'>
-        <a  href='https://github.com/sumory/lor'><h1>lor</h1></a>
+        <a  href='#'><h1>lor</h1></a>
         <h3>{{ site.description }}</h3>
         <h5>Made with <span class='mega-octicon octicon-heart'></span> by <a href='https://github.com/sumory'>sumory.wu</a></h5>
+        <p>current version: v0.0.5</p>
       </div>
     </div>
   </div>
 
-
-
+<!--
 <section id='get-started' class='get-started'>
     <div class='container'>
       <div class='row'>
@@ -34,29 +34,25 @@ layout: default
         <div class='row'>
           <div class='eight columns offset-by-two'>
             <pre><code>
-# Clone the repository
 $ git clone https://github.com/sumory/lor
-
-# Go into the repository
 $ cd lor
 
 # before install lor, you should have installed OpenResty and luajit
 # now install lor in /opt/lua/lor
-# the `lor` cli will be in /usr/local/bin/
+# the `lord` cli will be in /usr/local/bin/
 $ sh install.sh /opt/lua/lor #choose your path as you want
 
-# use lor to build a project scaffold
-$ cd /tmp/ && lor new lor_demo && cd /tmp/lor_demo
-$ lor start
-# then open http://localhost:8888/ in some browser
+$ cd /tmp/ && lord new lor_demo && cd /tmp/lor_demo
+$ lord start
+# then visit http://localhost:8888/
             </code></pre>
           </div>
         </div>
-        
+        <p>please check the <a href="/docs">documents</a> for more specific details.</p>
         </div>
     </div>
   </section>
-
+-->
 
   <section class='electron-does'>
     <div class='container'>
@@ -93,17 +89,17 @@ $ lor start
         <div class='three columns offset-by-one'>
           <span class="mega-octicon octicon-tools"></span>
           <br/>
-          Generate scaffold code
+          Generate scaffold code with cli
         </div>
         <div class='four columns'>
           <span class="mega-octicon octicon-bug"></span>
           <br/>
-          Error reporting
+          Error reporting or handling
         </div>
         <div class='three columns'>
           <span class="mega-octicon octicon-device-desktop"></span>
           <br/>
-          Simple routes rule to follow
+          Simple and Powerful route mechanism
         </div>
       </div>
     </div>

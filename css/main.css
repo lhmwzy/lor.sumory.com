@@ -7,8 +7,12 @@ body {
   background-color: #A5ECFA;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   font-weight: 400;
+}
+
+h4 {
+  font-size:18px;
 }
 
 a {
