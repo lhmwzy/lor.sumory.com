@@ -14,6 +14,7 @@ permalink: /docs/v0.0.5/index.html
 
 * [社区](faq/intro)
 * [roadmap](faq/roadmap)
+* [如何编写自己的lor插件](faq/middleware)
 
 ## 教程
 
@@ -23,6 +24,7 @@ permalink: /docs/v0.0.5/index.html
 
 
 ## 其它
+
 
 * [如何在lor中使用cookie](other/cookie-usage)
 * [如何在lor中使用session](other/session-usage)
