@@ -23,7 +23,7 @@ source_url: 'https://github.com/sumory/lor.sumory.com/blob/master/docs/faq/middl
 常规插件一般要放在**业务路由**的前面加载，先来看下一个很简单的常规lor插件(simple\_middleware.lua):
 
 
-```
+```lua
 local simple_middleware =  function(params)
     return function(req, res, next)
         -- 对req和res对象做一些处理
@@ -43,7 +43,7 @@ return simple_middleware
 
 1）直接使用app:use(middleware)，这个插件会匹配所有路由
 
-```
+```lua
 local lor = require("lor.index")
 local app = lor()
 
@@ -63,7 +63,7 @@ app:run()
 
 2）使用app:use(path, middleware)，这个插件只匹配满足“path”的路由
 
-```
+```lua
 app:use("some_path", simple_middleware(simple_middleware_params))
 ```
 
@@ -77,7 +77,7 @@ app:use("some_path", simple_middleware(simple_middleware_params))
 错误处理插件一般要放在**业务路由**的**后面**加载，先来看下一个错误处理插件实例(simple\_error_middleware.lua):
 
 
-```
+```lua
 local simple_error_middleware =  function(params)
     return function(err, req, res, next)
         -- err对象是错误插件接到的对象，它一般有两个来源
@@ -97,7 +97,7 @@ return simple_error_middleware
 
 1）直接使用app:erroruse(middleware)，这个插件会匹配所有发生的错误情况
 
-```
+```lua
 local lor = require("lor.index")
 local app = lor()
 
@@ -118,6 +118,6 @@ app:run()
 
 2）使用app:erroruse(path, middleware)，这个插件只匹配满足“path”的路由发生的错误
 
-```
+```lua
 app:erroruse("some_path", simple_error_middleware(simple_error_middleware_params))
 ```
