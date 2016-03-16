@@ -16,6 +16,7 @@ current_chrome: 47.0.2526.73
 current_v8: 4.7.80.27
 available_api_versions:
     - v0.0.5
+    - v0.1.0
 available_versions:
     - v0.0.1
     - v0.0.5

@@ -20,8 +20,10 @@ local lor = require("lor.index")
 local app = lor()
 
 -- 加载session插件
-local middleware_session = require("lor.lib.middleware.session")
-app:use(middleware_session())
+local session_middleware = require("lor.lib.middleware.session")
+app:use(session_middleware({
+    secret = "G3fu98Kor0rJrembv67fnhgl95FioRpQ" -- 加密用的盐
+}))
 
 -- 模拟session的使用
 -- 加载session插件后，`session`对象被注入到了`req`对象里

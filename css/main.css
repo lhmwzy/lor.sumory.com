@@ -15,6 +15,12 @@ h4 {
   font-size:18px;
 }
 
+.docs h4 {
+  font-size:18px;
+  border-left: 4px solid rgb(4, 34, 56);
+  padding-left: 10px;
+}
+
 a {
  color: #39AEC6;
  text-decoration: none;
