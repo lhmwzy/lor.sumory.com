@@ -10,7 +10,7 @@ redcarpet:
     extensions: [with_toc_data]
 gems:
     - jekyll-redirect-from
-latest_version: v0.0.5
+latest_version: v0.1.0
 current_node: 5.1.1
 current_chrome: 47.0.2526.73
 current_v8: 4.7.80.27
@@ -19,6 +19,7 @@ available_api_versions:
 available_versions:
     - v0.0.1
     - v0.0.5
+    - v0.1.0
 collections:
     docs: {output: true, permalink: '/docs/:path/'}
     apis: {output: true, permalink: '/apis/:path/'}
