@@ -29,10 +29,10 @@ Commands:
 
 #### 使用lord创建项目
 
-`lor new`命令创建一个项目骨架:
+`lord new`命令创建一个项目骨架:
 
 ```bash
-lor new lor_demo
+lord new lor_demo
 ```
 
 进入lor_demo查看，一个lor项目就被创建好了，它的结构如下：
@@ -60,7 +60,7 @@ __注意__: 请先阅读以上示例的代码，在对`lor`熟悉之前，请不
 
 ```bash
 $ cd lor_demo
-$ lor start
+$ lord start
 ```
 
 现在打开浏览器，访问[http://localhost:8888](http://localhost:8888)来查看你的第一个lor项目吧.
