@@ -16,7 +16,7 @@ lor提供了一个命令行工具`lord`来构建基于lor的项目骨架，此�
 $ lord -h
 lor v0.1.0, a Lua web framework based on OpenResty.
 
-Usage: lor COMMAND [OPTIONS]
+Usage: lord COMMAND [OPTIONS]
 
 Commands:
  new [name]             Create a new application
