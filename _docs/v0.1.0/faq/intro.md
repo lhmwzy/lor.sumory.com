@@ -15,5 +15,5 @@ source_url: 'https://github.com/sumory/lor.sumory.com/blob/master/docs/faq/intro
 #### **lor** 框架有没有在线群组或是其他交流方式?
 
  - 有一个用于在线交流的QQ群522410959，里面有OpenResty或是lor的热心用户，欢迎大家一起加入讨论
- - [OpenResty China](http://orc.black) 社区，本身也是基于lor框架构建的。
+ - [OpenResty China](https://orchina.org/) 社区，本身也是基于lor框架构建的。
 
