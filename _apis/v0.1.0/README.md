@@ -220,7 +220,7 @@ res的常用属性和方法介绍如下：
 - 渲染html页面，响应头Content-Type值为text/html; charset=UTF-8
 - 参数说明
     - view，模板文件路径，比如app:conf("views", "./app/views")设置了模板路径为./app/views，那么想使用模板文件./app/views/user/index.html时，这个值应为"user/index"
-    - data，类型为table，值得是模板文件渲染时需要的数据
+    - data，类型为table，指得是模板文件渲染时需要的数据
 
 ### res:html(content)
 
